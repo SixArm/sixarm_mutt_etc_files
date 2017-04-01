@@ -1,8 +1,9 @@
+##
 # Mutt using the Maildir format for storing each email as a file.
 # From http://www.elho.net/mutt/maildir/
+##
 
 set mbox_type=Maildir
-
 
 # Configure locations of common folders
    
@@ -13,13 +14,11 @@ set record="+.Sent"
 set postponed="+.Drafts"
 set spoolfile="~/Maildir"
 
-
 # Set up mailboxes by scanning for all subfolders in ~/Maildir
 # Note that this requires find(1) from the GNU findutils,
 # which on BSD systems usually is installed as gfind(1).
 
 mailboxes `echo -n "+ "; find ~/Maildir -maxdepth 1 -type d -name ".*" -printf "+'%f' "`
-
 
 # Add macros to make the folder browser usable 
 # by always using the mailboxes setup above
